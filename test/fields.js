@@ -143,7 +143,7 @@ describe('Fields', function() {
 			name: '',
 			street1: '',
 			street2: '',
-			suburb: '',
+			city: '',
 			state: '',
 			postcode: '',
 			country: '',
@@ -163,7 +163,7 @@ describe('Fields', function() {
 				'location.basic.name': 'name',
 				'location.basic.street1': 'street 1',
 				'location.basic.street2': 'street 2',
-				'location.basic.suburb': 'suburb',
+				'location.basic.city': 'city',
 				'location.basic.state': 'state',
 				'location.basic.postcode': 'postcode',
 				'location.basic.country': 'country',
@@ -174,7 +174,7 @@ describe('Fields', function() {
 			demand(testItem.location.basic.name).be('name');
 			demand(testItem.location.basic.street1).be('street 1');
 			demand(testItem.location.basic.street2).be('street 2');
-			demand(testItem.location.basic.suburb).be('suburb');
+			demand(testItem.location.basic.city).be('city');
 			demand(testItem.location.basic.state).be('state');
 			demand(testItem.location.basic.postcode).be('postcode');
 			demand(testItem.location.basic.country).be('country');
@@ -192,7 +192,7 @@ describe('Fields', function() {
 						name: 'name',
 						street1: 'street 1',
 						street2: 'street 2',
-						suburb: 'suburb',
+						city: 'city',
 						state: 'state',
 						postcode: 'postcode',
 						country: 'country',
@@ -204,7 +204,7 @@ describe('Fields', function() {
 			demand(testItem.location.basic.name).be('name');
 			demand(testItem.location.basic.street1).be('street 1');
 			demand(testItem.location.basic.street2).be('street 2');
-			demand(testItem.location.basic.suburb).be('suburb');
+			demand(testItem.location.basic.city).be('city');
 			demand(testItem.location.basic.state).be('state');
 			demand(testItem.location.basic.postcode).be('postcode');
 			demand(testItem.location.basic.country).be('country');
@@ -231,21 +231,21 @@ describe('Fields', function() {
 			Test.fields['location.basic'].validateInput({}, true, testItem).must.be.false();
 			Test.fields['location.basic'].validateInput({
 				'location.basic.street1': 'street1',
-				'location.basic.suburb': ''
+				'location.basic.city': ''
 			}, true, testItem).must.be.false();
 			Test.fields['location.basic'].validateInput({
 				'location.basic.street1': 'street1',
-				'location.basic.suburb': 'suburb'
+				'location.basic.city': 'city'
 			}, true, testItem).must.be.true();
 			Test.fields['location.basic'].validateInput({
 				location: { basic: {
 					street1: 'street1',
-					suburb: 'suburb'
+					city: 'city'
 				} }
 			}, true, testItem).must.be.true();
 			Test.fields['location.customRequired'].validateInput({
 				'location.customRequired.street1': 'street1',
-				'location.customRequired.suburb': 'suburb'
+				'location.customRequired.city': 'city'
 			}, true, testItem).must.be.false();
 			Test.fields['location.customRequired'].validateInput({
 				'location.customRequired.state': 'state',
